@@ -128,6 +128,28 @@ input[type="text"]:hover {
   height: 80px;
   color: var(--color-mainblue);
 }
+
+.pointContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-mainblue);
+}
+.playerPoint1 {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+}
+.playerPoint2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
 @media (max-width: 420px) {
   body {
     align-items: center;
@@ -189,7 +211,26 @@ input[type="text"]:hover {
     width: 300px;
     height: 300px;
   }
-  .game {
+
+  .pointContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     width: 300px;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-mainblue);
+  }
+
+  .game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 800;
+    width: 300px;
+    height: 80px;
+    color: var(--color-mainblue);
   }
 }

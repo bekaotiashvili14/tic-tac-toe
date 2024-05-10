@@ -1,5 +1,7 @@
 const container = document.querySelectorAll(".items");
 let firstClick = "X";
+let player1Winner = 0;
+let player2Winner = 0;
 
 container.forEach((element) => {
   element.addEventListener("click", () => {
@@ -29,6 +31,8 @@ function checkForWin() {
   const game_winner = document.getElementById("game_winner");
   const savedPlayerOne = sessionStorage.getItem("name1");
   const savedPlayerTwo = sessionStorage.getItem("name2");
+  let playerPoint1 = document.getElementById("playerPoint1");
+  let playerPoint2 = document.getElementById("playerPoint2");
 
   const winConditions = [
     [0, 1, 2],
@@ -46,8 +50,12 @@ function checkForWin() {
     if (items[a] && items[a] === items[b] && items[a] === items[c]) {
       if (items[a] === "X") {
         game_winner.innerHTML = `Game winner is ${savedPlayerOne} `;
+        playerPoint1.innerHTML = `${(player1Winner += 1)} `;
+        resetBoard();
       } else {
         game_winner.innerHTML = `Game winner is    ${savedPlayerTwo}  `;
+        playerPoint2.innerHTML = `${(player2Winner += 1)} `;
+        resetBoard();
       }
       return true;
     }
