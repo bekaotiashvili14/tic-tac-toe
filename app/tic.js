@@ -15,7 +15,10 @@ container.forEach((element) => {
     }
   });
 });
-
+const savedPlayerOne = sessionStorage.getItem("name1");
+const savedPlayerTwo = sessionStorage.getItem("name2");
+playerPoint1.innerHTML = `${savedPlayerOne}  point 0`;
+playerPoint2.innerHTML = `${savedPlayerTwo}  point 0`;
 function checkForWin() {
   const items = [
     document.getElementById("items1").textContent,
@@ -50,11 +53,11 @@ function checkForWin() {
     if (items[a] && items[a] === items[b] && items[a] === items[c]) {
       if (items[a] === "X") {
         game_winner.innerHTML = `Game winner is ${savedPlayerOne} `;
-        playerPoint1.innerHTML = `${(player1Winner += 1)} `;
+        playerPoint1.innerHTML = `${savedPlayerOne} point  ${(player1Winner += 1)} `;
         resetBoard();
       } else {
-        game_winner.innerHTML = `Game winner is    ${savedPlayerTwo}  `;
-        playerPoint2.innerHTML = `${(player2Winner += 1)} `;
+        game_winner.innerHTML = `Game winner is   ${savedPlayerTwo}  `;
+        playerPoint2.innerHTML = `${savedPlayerTwo} point  ${(player2Winner += 1)} `;
         resetBoard();
       }
       return true;
