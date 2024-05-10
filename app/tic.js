@@ -57,7 +57,7 @@ function checkForWin() {
         resetBoard();
       } else {
         game_winner.innerHTML = `Game winner is   ${savedPlayerTwo} `;
-        playerPoint2.innerHTML = `${savedPlayerTwo} ${(player2Winner += 1)} `;
+        playerPoint2.innerHTML = `${savedPlayerTwo} point  ${(player2Winner += 1)} `;
         resetBoard();
       }
       return true;
